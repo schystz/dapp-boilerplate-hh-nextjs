@@ -3,11 +3,11 @@ import type { AppProps } from 'next/app'
 import { ChainId, Config, DAppProvider } from '@usedapp/core'
 
 const config: Config = {
-  readOnlyChainId: ChainId.Mainnet,
+  readOnlyChainId: ChainId.Hardhat,
   readOnlyUrls: {
-    [ChainId.Mainnet]:
-      'https://mainnet.infura.io/v3/62687d1a985d4508b2b7a24827551934'
-  }
+    [ChainId.Hardhat]: 'http://127.0.0.1:8545/'
+  },
+  supportedChains: [ChainId.Hardhat]
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
